@@ -36,7 +36,6 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "public")));
 
 // Authentication
 
@@ -68,7 +67,7 @@ function auth(req, res, next) {
 app.use(auth);
 
 // view engine setup
-
+app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/campsites", campsiteRouter);
