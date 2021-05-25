@@ -20,6 +20,10 @@ const promotionSchema = new Schema({
     type: Boolean,
     default: false,
   },
+  cost: {
+    type: Number,
+    required: true,
+  },
 });
 
 const Promotion = mongoose.model("Promotion", promotionSchema);
