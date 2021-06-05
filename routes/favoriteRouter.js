@@ -64,6 +64,8 @@ favoriteRouter
       .catch((err) => next(err));
   });
 
+// favorite/:campsiteId
+
 favoriteRouter
   .route("/:campsiteId")
   .options(cors.corsWithOptions, (req, res) => res.sendStatus(200))
