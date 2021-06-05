@@ -6,6 +6,7 @@ const cors = require("./cors");
 const promotionRouter = express.Router();
 
 promotionRouter
+  .route("/")
   .options(cors.corsWithOptions, (req, res) => res.sendStatus(200))
   .get(cors.cors, (req, res, next) => {
     Promotion.find()
